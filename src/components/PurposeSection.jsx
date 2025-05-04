@@ -17,7 +17,7 @@ const PurposeSection = () => {
   ];
 
   return (
-    <section className="w-full bg-gray-50 py-16 px-4 sm:px-6">
+    <section id="about" className="w-full bg-gray-50 py-16 px-4 sm:px-6">
       <div className="max-w-6xl mx-auto">
         <div className="grid md:grid-cols-3 grid-cols-1 gap-8">
           {/* heading text */}
