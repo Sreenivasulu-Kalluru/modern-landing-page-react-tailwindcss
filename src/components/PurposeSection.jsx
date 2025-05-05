@@ -1,4 +1,5 @@
-import React from 'react';
+import { motion } from 'framer-motion';
+import { fadeIn, textVariant } from '../utils/motion';
 
 const PurposeSection = () => {
   const features = [
@@ -19,19 +20,34 @@ const PurposeSection = () => {
   return (
     <section id="about" className="w-full bg-gray-50 py-16 px-4 sm:px-6">
       <div className="max-w-6xl mx-auto">
-        <div className="grid md:grid-cols-3 grid-cols-1 gap-8">
+        <motion.div
+          variants={fadeIn('right', 0.2)}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true }}
+          className="grid md:grid-cols-3 grid-cols-1 gap-8"
+        >
           {/* heading text */}
-          <div className="">
-            <p className="text-sm text-purple-600 font-medium mb-2">
+          <motion.div variants={fadeIn('right', 0.3)}>
+            <motion.p
+              variants={fadeIn('up', 0.4)}
+              className="text-sm text-purple-600 font-medium mb-2"
+            >
               ACHIEVE MORE
-            </p>
-            <h2 className="text-3xl md:w-4/5 w-full md:text-4xl font-bold text-gray-900">
+            </motion.p>
+            <motion.h2
+              variants={textVariant(0.5)}
+              className="text-3xl md:w-4/5 w-full md:text-4xl font-bold text-gray-900"
+            >
               Purpose of a convoy is to keep your team
-            </h2>
-          </div>
+            </motion.h2>
+          </motion.div>
 
           {/* bullet points */}
-          <div className="col-span-2 grid grid-cols-1 md:grid-cols-2 justify-between gap-8">
+          <motion.div
+            variants={fadeIn('left', 0.3)}
+            className="col-span-2 grid grid-cols-1 md:grid-cols-2 justify-between gap-8"
+          >
             {features.map((feature, index) => (
               <div key={index} className="flex items-start space-x-4 mb-6">
                 <div className="mt-[2px] flex items-center justify-center rounded-lg">
@@ -45,8 +61,8 @@ const PurposeSection = () => {
                 </div>
               </div>
             ))}
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
       </div>
     </section>
   );
