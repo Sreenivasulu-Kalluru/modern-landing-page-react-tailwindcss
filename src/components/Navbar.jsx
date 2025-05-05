@@ -115,14 +115,15 @@ const Navbar = () => {
                 {link.label}
               </motion.a>
             ))}
-            <motion.button
+            <motion.a
+              href="#newsletter"
               variants={fadeIn('up', 0.4)}
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
               className="w-full bg-blue-600 text-white px-6 py-2.5 rounded-lg hover:bg-blue-700 text-sm font-medium transition-all hover:shadow-lg hover:shadow-blue-100"
             >
               Get in touch
-            </motion.button>
+            </motion.a>
           </motion.div>
         </motion.div>
       )}
